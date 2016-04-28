@@ -1,16 +1,27 @@
+
+<h1> Liste des cartes</h1>
+
 <% if @hscards.any? %>
-    <table>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Coût</th>
+        <th>Points d'attaque</th>
+        <th>Points de vie</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
       <tbody>
       <% @hscards.each do |hscard| %>
           <tr>
-            <td><%= hscard.id %></td>
             <td><%= hscard.name %></td>
             <td><%= hscard.cost %></td>
             <td><%= hscard.attack_points %></td>
             <td><%= hscard.life_points %></td>
-            <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %></td>
-            <td><%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %></td>
-            <td><%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+            <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
+            <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
+            <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
           </tr>
       <% end %>
       </tbody>
