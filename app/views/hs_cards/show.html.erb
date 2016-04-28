@@ -1,0 +1,8 @@
+<p>Nom: <%= @hscard.name %></p>
+<p>Coût: <%= @hscard.cost %></p>
+<p>Points d'attaque: <%= @hscard.attack_points %></p>
+<p>Points de vie: <%= @hscard.life_points %></p>
+
+
+<%= link_to 'Modifier', edit_hs_card_path, class:'btn btn-info' %>
+<%= link_to 'Retour', hs_cards_url, class:'btn btn-danger' %>

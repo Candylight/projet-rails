@@ -1,0 +1,25 @@
+<% if @hscards.any? %>
+    <table>
+      <tbody>
+      <% @hscards.each do |hscard| %>
+          <tr>
+            <td><%= hscard.id %></td>
+            <td><%= hscard.name %></td>
+            <td><%= hscard.cost %></td>
+            <td><%= hscard.attack_points %></td>
+            <td><%= hscard.life_points %></td>
+            <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %></td>
+            <td><%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %></td>
+            <td><%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
+    <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
+<% else %>
+    <p>Il n'y a pas de cartes!</p>
+    <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
+<% end %>
+
+
