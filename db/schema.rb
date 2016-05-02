@@ -11,13 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428194312) do
+ActiveRecord::Schema.define(version: 20160502101128) do
+
+  create_table "extensions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "release"
+    t.boolean  "standard"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hs_cards", force: :cascade do |t|
     t.string  "name"
     t.integer "cost"
     t.integer "attack_points"
     t.integer "life_points"
+    t.text    "description"
+    t.integer "rarity_id"
+    t.integer "hs_class_id"
+  end
+
+  add_index "hs_cards", ["hs_class_id"], name: "index_hs_cards_on_hs_class_id"
+  add_index "hs_cards", ["rarity_id"], name: "index_hs_cards_on_rarity_id"
+
+  create_table "hs_classes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.string   "hero_power"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rarities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

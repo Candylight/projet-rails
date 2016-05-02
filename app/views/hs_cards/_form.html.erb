@@ -3,8 +3,11 @@
       <div class="form-group col-lg-5">
         <%= f.input :name, label: 'Nom', class: 'form-control' %>
         <%= f.input :cost, label: 'Coût', class: 'form-control' %>
+        <%= f.association :rarity, label: 'Rareté', class: 'form-control' %>
+        <%= f.association :hs_class, label: 'Classe', class: 'form-control' %>
         <%= f.input :attack_points, label: 'Points attaque', class: 'form-control' %>
         <%= f.input :life_points, label: 'Points de vie', class: 'form-control' %>
+        <%= f.input :description, label: 'Description', class: 'form-control' %>
       </div>
     </div>
     <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>
