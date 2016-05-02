@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :rarities
   root 'home#index'
   resources :hs_cards
+  resources :home
 end
