@@ -6,6 +6,7 @@
       <thead>
       <tr>
         <th>Nom</th>
+        <th>Extension/th>
         <th>Coût</th>
         <th>Points d'attaque</th>
         <th>Points de vie
@@ -19,6 +20,7 @@
       <% @hscards.each do |hscard| %>
           <tr>
             <td><%= hscard.name %></td>
+            <td><%= hscard.extension.name %></td>
             <td><%= hscard.cost %></td>
             <td><%= hscard.attack_points %></td>
             <td><%= hscard.life_points %></td>

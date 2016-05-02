@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502101128) do
+ActiveRecord::Schema.define(version: 20160502121011) do
 
   create_table "extensions", force: :cascade do |t|
     t.string   "name"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20160502101128) do
     t.text    "description"
     t.integer "rarity_id"
     t.integer "hs_class_id"
+    t.integer "extension_id"
   end
 
+  add_index "hs_cards", ["extension_id"], name: "index_hs_cards_on_extension_id"
   add_index "hs_cards", ["hs_class_id"], name: "index_hs_cards_on_hs_class_id"
   add_index "hs_cards", ["rarity_id"], name: "index_hs_cards_on_rarity_id"
 
