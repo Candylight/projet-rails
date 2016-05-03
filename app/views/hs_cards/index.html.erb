@@ -34,12 +34,9 @@
       </tbody>
     </table>
     <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
-    <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
 <% else %>
     <p>Il n'y a pas de cartes!</p>
-    <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
-    <%= link_to 'Home', home_url, class:'btn btn-danger' %>
-
 <% end %>
-
+<%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
+<%= link_to 'Home', root_path, class:'btn btn-danger' %>
 
