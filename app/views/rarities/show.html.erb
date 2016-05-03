@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rarity.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @rarity.color %>
+</p>
+
+<%= link_to 'Modifier', edit_rarity_path(@rarity), class:'btn btn-info' %> |
+<%= link_to 'Retour', rarities_path, class:'btn btn-danger' %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @hs_class.name %>
+</p>
+
+<p>
+  <strong>Couleur:</strong>
+  <%= @hs_class.color %>
+</p>
+
+<p>
+  <strong>Pouvoir Héroique:</strong>
+  <%= @hs_class.hero_power %>
+</p>
+
+<%= link_to 'Modifier', edit_hs_class_path(@hs_class), class:'btn btn-info' %> |
+<%= link_to 'Retour', hs_classes_path, class:'btn btn-danger' %>
