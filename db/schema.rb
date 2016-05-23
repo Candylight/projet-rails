@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502121011) do
+ActiveRecord::Schema.define(version: 20160523074144) do
 
   create_table "extensions", force: :cascade do |t|
     t.string   "name"
     t.datetime "release"
     t.boolean  "standard"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,11 +36,15 @@ ActiveRecord::Schema.define(version: 20160502121011) do
     t.integer "rarity_id"
     t.integer "hs_class_id"
     t.integer "extension_id"
+    t.integer "type_id"
+    t.integer "group_id"
   end
 
   add_index "hs_cards", ["extension_id"], name: "index_hs_cards_on_extension_id"
+  add_index "hs_cards", ["group_id"], name: "index_hs_cards_on_group_id"
   add_index "hs_cards", ["hs_class_id"], name: "index_hs_cards_on_hs_class_id"
   add_index "hs_cards", ["rarity_id"], name: "index_hs_cards_on_rarity_id"
+  add_index "hs_cards", ["type_id"], name: "index_hs_cards_on_type_id"
 
   create_table "hs_classes", force: :cascade do |t|
     t.string   "name"
@@ -47,6 +57,12 @@ ActiveRecord::Schema.define(version: 20160502121011) do
   create_table "rarities", force: :cascade do |t|
     t.string   "name"
     t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

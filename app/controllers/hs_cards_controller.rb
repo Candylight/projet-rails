@@ -4,7 +4,7 @@ class HsCardsController < ApplicationController
 
   def index
     @hscards = HsCard.paginate(page: params[:page], per_page: 1)
-                   .includes ([:hs_class, :rarity, :extension])
+                   .includes ([:hs_class, :rarity, :extension, :type, :group])
 
   end
 
@@ -42,7 +42,7 @@ class HsCardsController < ApplicationController
   private
 
   def hscard_param
-    params.require(:hs_card).permit(:name, :cost, :attack_points, :life_points, :description, :rarity_id, :hs_class_id, :extension_id)
+    params.require(:hs_card).permit(:name, :cost, :attack_points, :life_points, :description, :rarity_id, :hs_class_id, :extension_id, :type_id, :group_id)
   end
 
   def set_hscard

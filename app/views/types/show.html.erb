@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nom:</strong>
   <%= @type.name %>
 </p>
 
-<%= link_to 'Edit', edit_type_path(@type) %> |
-<%= link_to 'Back', types_path %>
+<%= link_to 'Modifier', edit_type_path(@type), class:'btn btn-info' %> |
+<%= link_to 'Retour', type_path, class:'btn btn-danger' %>
