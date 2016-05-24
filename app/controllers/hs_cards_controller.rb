@@ -3,8 +3,39 @@ class HsCardsController < ApplicationController
   before_action :set_hscard, only: [:show,:edit,:update, :destroy]
 
   def index
+
+    @filterrific = initialize_filterrific(
+        HsCard,
+        params[:filterrific],
+        select_options: {
+            sorted_by: HsCard.options_for_sorted_by,
+            with_hs_class_name: HsClass.options_for_select,
+            with_extension_name: Extension.options_for_select,
+            with_rarity_name: Rarity.options_for_select,
+            with_type_name: Type.options_for_select,
+            with_group_name: Group.options_for_select
+        },
+        persistence_id: 'shared_key',
+        default_filter_params: {},
+        available_filters: [],
+    ) or return
+
+    @hscards = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    rescue ActiveRecord::RecordNotFound => e
+    puts "Had to reset filterrific params: #{ e.message }"
+    redirect_to(reset_filterrific_url(format: :html)) and return
+
+
+
     @hscards = HsCard.paginate(page: params[:page], per_page: 1)
                    .includes ([:hs_class, :rarity, :extension, :type, :group])
+
 
   end
 
@@ -48,5 +79,4 @@ class HsCardsController < ApplicationController
   def set_hscard
     @hscard = HsCard.find params[:id]
   end
-
 end
