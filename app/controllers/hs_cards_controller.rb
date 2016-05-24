@@ -17,7 +17,6 @@ class HsCardsController < ApplicationController
         },
         persistence_id: 'shared_key',
         default_filter_params: {},
-        available_filters: [],
     ) or return
 
     @hscards = @filterrific.find.page(params[:page])
@@ -33,7 +32,7 @@ class HsCardsController < ApplicationController
 
 
 
-    @hscards = HsCard.paginate(page: params[:page], per_page: 1)
+    @hscards = HsCard.paginate(page: params[:page], per_page: 5)
                    .includes ([:hs_class, :rarity, :extension, :type, :group])
 
 

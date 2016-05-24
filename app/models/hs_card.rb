@@ -50,23 +50,23 @@ class HsCard < ActiveRecord::Base
 
   }
   scope :with_hs_class_name, lambda { |hs_class_name|
-    where(hs_classes:  { name: hs_class_name }).joins(:hs_classes)
+    where(hs_class: hs_class_name )
   }
 
   scope :with_extension_name, lambda { |extension_name|
-    where(extensions:  { name: extension_name }).joins(:extensions)
+    where(extension: extension_name )
   }
 
   scope :with_rarity_name, lambda { |rarity_name|
-    where(rarities:  { name: rarity_name })
+    where(rarity: rarity_name )
   }
 
   scope :with_type_name, lambda { |type_name|
-    where(types:  { name: type_name }).joins(:types)
+    where(type: type_name )
   }
 
   scope :with_group_name, lambda { |group_name|
-    where(groups:  { name: group_name }).joins(:groups)
+    where(group: group_name )
   }
 
   def self.options_for_sorted_by
