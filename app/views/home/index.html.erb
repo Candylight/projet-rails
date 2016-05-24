@@ -1,10 +1,13 @@
-<h1>
+<% content_for :top_content do %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Bienvenue sur le Projet Hearthstone</h1>
+        <p>Enregistrez vous pour créer des decks personnalisés.</p>
+        <p>
+          <%= link_to 'Enregistrez-vous', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+        </p>
+      </div>
+    </div>
+<% end %>
 
-  <%= link_to 'Cartes', hs_cards_url, class:'btn btn-info' %>
-  <%= link_to 'Extensions', extensions_url, class:'btn btn-info' %>
-  <%= link_to 'Classes', hs_classes_url, class:'btn btn-info' %>
-  <%= link_to 'Raretés', rarities_url, class:'btn btn-info' %>
-  <%= link_to 'Groupes', groups_url, class:'btn btn-info' %>
-  <%= link_to 'Types', types_url, class:'btn btn-info' %>
 
-</h1>
