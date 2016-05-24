@@ -1,0 +1,30 @@
+body{
+	background-image:url("./home/background.jpg");
+	background-size:100%;
+}
+
+
+
+
+.btn-hs{
+	background-color:transparent !important;
+	border:none !important;
+	text-align:center;
+	background-image:url("./home/bouton.png");
+	background-position:center;
+	padding:40px 60px;
+	font-size:13px;
+	color:black;
+}
+
+
+
+
+
+/*****************************************************************************/
+/*									HOME 									 */
+/*****************************************************************************/
+
+#page-home{
+	text-align:center;
+}

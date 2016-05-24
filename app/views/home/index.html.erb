@@ -1,13 +1,10 @@
 <% content_for :top_content do %>
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Bienvenue sur le Projet Hearthstone</h1>
-        <p>Enregistrez vous pour créer des decks personnalisés.</p>
-        <p>
-          <%= link_to 'Enregistrez-vous', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-        </p>
-      </div>
-    </div>
+	<div id="page-home">
+		<img src="img/home/logo.png" alt="">
+		<p>
+		  <%= link_to 'Enregistrez-vous', new_user_registration_path, class: 'btn btn-primary btn-lg btn-hs' %>
+		</p>
+	</div>
 <% end %>
 
 
