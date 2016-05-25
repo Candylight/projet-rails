@@ -18,50 +18,16 @@
               
               <div><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
                 <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %>
       </div>
     <% end %>
 
-
-
-
-
-
-
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Extension</th>
-        <th>Coût</th>
-        <th>Points d'attaque</th>
-        <th>Points de vie
-        <th>Description</th>
-        <th>Classe</th>
-        <th>Rareté</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @hscards.each do |hscard| %>
-          <tr>
-            <td><%= hscard.name %></td>
-            <td><%= hscard.extension.name %></td>
-            <td><%= hscard.cost %></td>
-            <td><%= hscard.attack_points %></td>
-            <td><%= hscard.life_points %></td>
-            <td><%= hscard.description %></td>
-            <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
-            <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
-            <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
-              <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-              <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
   <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
   </div>
-
 <% else %>
   <p>Il n'y a pas de cartes!</p>
+<% end %>
+</div>
+<% if (user_signed_in?) && current_user.admin? %>
+    <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
 <% end %>

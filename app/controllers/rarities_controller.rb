@@ -71,7 +71,7 @@ class RaritiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rarity_params
-      params.require(:rarity).permit(:name, :color)
+      params.require(:rarity).permit(:name, :color, :picture)
     end
 
   def permission_method

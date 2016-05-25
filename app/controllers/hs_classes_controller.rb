@@ -71,7 +71,7 @@ class HsClassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hs_class_params
-      params.require(:hs_class).permit(:name, :color, :hero_power)
+      params.require(:hs_class).permit(:name, :color, :hero_power, :picture)
     end
   def permission_method
     authenticate_user!

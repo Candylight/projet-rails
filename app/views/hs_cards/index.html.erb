@@ -78,7 +78,5 @@
         locals: { hs_cards: @hscards }
     ) %>
 
-<% if (user_signed_in?) && current_user.admin? %>
-  <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
-<% end %>
+
 
