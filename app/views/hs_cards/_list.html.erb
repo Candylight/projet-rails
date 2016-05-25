@@ -1,6 +1,29 @@
 <% if @hscards.any? %>
   <div id="filterrific_results">
 
+    <% @hscards.each do |hscard| %>
+      <div class="card">
+
+              <td><%= hscard.name %></td>
+              <td><%= hscard.extension.name %></td>
+              <td><%= hscard.cost %></td>
+              <td><%= hscard.attack_points %></td>
+              <td><%= hscard.life_points %></td>
+              <td><%= hscard.description %></td>
+              <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
+              <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
+              <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
+                <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
+                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+      </div>
+    <% end %>
+
+
+
+
+
+
+
     <table class="table">
       <thead>
       <tr>
