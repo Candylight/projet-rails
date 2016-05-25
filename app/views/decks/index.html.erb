@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listes des decks</h1>
+
+<table>
+
+  <tbody>
+    <% @decks.each do |deck| %>
+      <tr>
+        <td><%= deck.name %></td>
+        <td><%= deck.views %></td>
+        <td><%= deck.mark %></td>
+        <td><%= link_to 'Montrer', deck, class:'btn btn-info' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deck', new_deck_path, class:'btn btn-info' %>

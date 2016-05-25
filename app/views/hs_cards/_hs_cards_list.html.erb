@@ -1,0 +1,7 @@
+<% if hs_cards.any? %>
+    <%= hs_cards.map { |m| link_to(m.name, m) }
+        .join(', ')
+        .html_safe %>
+<% else %>
+    &empty;
+<% end %>

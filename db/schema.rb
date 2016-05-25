@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525101341) do
+ActiveRecord::Schema.define(version: 20160525165816) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 20160525101341) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "deck_hs_cards", force: :cascade do |t|
+    t.integer  "deck_id"
+    t.integer  "hs_card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string  "name"
+    t.integer "views"
+    t.integer "mark"
+    t.text    "description"
+    t.integer "hs_card_id"
+    t.integer "hs_class_id"
+  end
+
+  add_index "decks", ["hs_card_id"], name: "index_decks_on_hs_card_id"
+  add_index "decks", ["hs_class_id"], name: "index_decks_on_hs_class_id"
 
   create_table "extensions", force: :cascade do |t|
     t.string   "name"
@@ -124,8 +143,10 @@ ActiveRecord::Schema.define(version: 20160525101341) do
     t.datetime "updated_at",                             null: false
     t.string   "name",                   default: "",    null: false
     t.boolean  "admin",                  default: false
+    t.integer  "deck_id"
   end
 
+  add_index "users", ["deck_id"], name: "index_users_on_deck_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

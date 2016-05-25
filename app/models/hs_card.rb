@@ -6,7 +6,8 @@ class HsCard < ActiveRecord::Base
   belongs_to :extension
   belongs_to :type
   belongs_to :group
-
+  has_many :deck_hs_cards
+  has_many :decks, through: :deck_hs_cards
   has_attached_file :picture
   validates_attachment_content_type :picture, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
