@@ -13,11 +13,9 @@
               <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
               <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
               <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
-
-                <% if (user_signed_in?) && current_user.admin? %>
-                    <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-                    <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
-                <% end %>      </div>
+                <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
+                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+      </div>
     <% end %>
 
 
@@ -51,12 +49,8 @@
             <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
             <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
             <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
-
-              <% if (user_signed_in?) && current_user.admin? %>
-                <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
-              <% end %>
-
+              <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
+              <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
           </tr>
       <% end %>
       </tbody>
