@@ -1,9 +1,9 @@
 class HsCardsController < ApplicationController
 
   before_action :set_hscard, only: [:show,:edit,:update, :destroy]
+  before_filter :authenticate_admin!, only: [:new, :edit, :update, :destroy]
 
   def index
-
     @filterrific = initialize_filterrific(
         HsCard,
         params[:filterrific],
@@ -16,7 +16,6 @@ class HsCardsController < ApplicationController
             with_group_name: Group.options_for_select
         },
         persistence_id: 'shared_key',
-        default_filter_params: {},
     ) or return
 
     @hscards = @filterrific.find.page(params[:page])
