@@ -16,9 +16,36 @@ body{
 	font-size:13px;
 	color:black;
 }
+	.btn-hs:active{
+		background-image:url("./home/bouton.png");
+		box-shadow:none;
+		color:grey !important;
+	}
+	.btn-hs:hover{
+		color:grey !important;
+	}
 
 
 
+
+
+
+
+.navbar-inverse{
+	border:none;
+	border-radius:0px !important;
+}
+
+.navbar-home{
+	background-image:url("./home/logo.png");
+	width:180px;
+	display:block;
+	height:70px;
+	background-size:100% auto;
+}
+.all-thumbnails{
+	margin-top:10px;
+}
 
 
 /*****************************************************************************/
