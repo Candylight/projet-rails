@@ -7,6 +7,9 @@ class HsCard < ActiveRecord::Base
   belongs_to :type
   belongs_to :group
 
+  has_attached_file :picture
+  validates_attachment_content_type :picture, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   filterrific(
       default_filter_params: { sorted_by: 'hs_card_name_asc' },
       available_filters: [

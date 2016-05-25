@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525082750) do
+ActiveRecord::Schema.define(version: 20160525101341) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,30 +35,39 @@ ActiveRecord::Schema.define(version: 20160525082750) do
     t.string   "name"
     t.datetime "release"
     t.boolean  "standard"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "hs_cards", force: :cascade do |t|
-    t.string  "name"
-    t.integer "cost"
-    t.integer "attack_points"
-    t.integer "life_points"
-    t.text    "description"
-    t.integer "rarity_id"
-    t.integer "hs_class_id"
-    t.integer "extension_id"
-    t.integer "type_id"
-    t.integer "group_id"
-    t.text    "picture"
+    t.string   "name"
+    t.integer  "cost"
+    t.integer  "attack_points"
+    t.integer  "life_points"
+    t.text     "description"
+    t.integer  "rarity_id"
+    t.integer  "hs_class_id"
+    t.integer  "extension_id"
+    t.integer  "type_id"
+    t.integer  "group_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "hs_cards", ["extension_id"], name: "index_hs_cards_on_extension_id"
@@ -71,24 +80,33 @@ ActiveRecord::Schema.define(version: 20160525082750) do
     t.string   "name"
     t.string   "color"
     t.string   "hero_power"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "rarities", force: :cascade do |t|
     t.string   "name"
     t.string   "color"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -11,6 +11,7 @@
         <%= f.input :attack_points, label: 'Points attaque', class: 'form-control' %>
         <%= f.input :life_points, label: 'Points de vie', class: 'form-control' %>
         <%= f.input :description, label: 'Description', class: 'form-control' %>
+        <%= f.input :picture, as: :file %>
       </div>
     </div>
     <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>

@@ -16,6 +16,7 @@
       <tr>
         <td><%= rarity.name %></td>
         <td><%= rarity.color %></td>
+        <td><img src ="<%= rarity.picture %>"></td>
         <td><%= link_to 'Montrer', rarity, class:'btn btn-info' %></td>
 
         <% if (user_signed_in?) && current_user.admin? %>

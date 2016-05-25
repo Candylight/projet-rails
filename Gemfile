@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'filterrific'
-
+gem "paperclip", "~> 5.0.0.beta1"
 
 
 group :development, :test do
