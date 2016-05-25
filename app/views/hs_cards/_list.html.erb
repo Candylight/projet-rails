@@ -3,18 +3,19 @@
 
     <% @hscards.each do |hscard| %>
       <div class="card">
-
-              <td><%= hscard.name %></td>
-              <td><%= hscard.extension.name %></td>
-              <td><%= hscard.cost %></td>
-              <td><%= hscard.attack_points %></td>
-              <td><%= hscard.life_points %></td>
-              <td><%= hscard.description %></td>
-              <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
-              <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
-              <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
+              <div><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color)%></div>
+              <div class="cout"><%= hscard.cost %></div>
+              <img src="" alt="">
+              <div class="nom"><%= hscard.name %></div>
+              <div class="extension"><%= hscard.extension.name %></div>
+              <div class="rareté"><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></div>
+              <div class="description"><%= hscard.description %></div>
+              <div class="points_attaque"><%= hscard.attack_points %></div>
+              <div class="points_vie"><%= hscard.life_points %></div>
+              
+              <div><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
                 <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
+                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></div>
       </div>
     <% end %>
 

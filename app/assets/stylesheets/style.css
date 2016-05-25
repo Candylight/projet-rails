@@ -63,10 +63,10 @@ body{
 			background-color:rgba(255,255,255,0.1) !important;
 		}
 		.navbar-inverse .connexion{
-			background-image:url("./home/account.png");
+			background-image:url("./navbar/account.png");
 		}
 		.navbar-inverse .inscription{
-			background-image:url("./home/new_account.png");
+			background-image:url("./navbar/new_account.png");
 			margin-left:20px;
 		}
 
@@ -78,3 +78,35 @@ body{
 #page-home{
 	text-align:center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#filterrific_results{
+	
+}
+
+	#filterrific_results .card{
+		width:336px;
+		height:452px;
+		background-image:url("./card/background.png");
+		float:left;
+		padding-top:45px;
+		background-position:center top;
+	}
+		#filterrific_results .card{
