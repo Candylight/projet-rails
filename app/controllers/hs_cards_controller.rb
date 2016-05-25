@@ -71,7 +71,7 @@ class HsCardsController < ApplicationController
   private
 
   def hscard_param
-    params.require(:hs_card).permit(:name, :cost, :attack_points, :life_points, :description, :rarity_id, :hs_class_id, :extension_id, :type_id, :group_id)
+    params.require(:hs_card).permit(:name, :cost, :attack_points, :life_points, :description, :rarity_id, :hs_class_id, :extension_id, :type_id, :group_id, :picture)
   end
 
   def set_hscard
