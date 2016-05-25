@@ -1,10 +1,14 @@
 body{
 	background-image:url("./home/background.jpg");
 	background-size:100%;
+    font-family: "HDVPeace";
 }
 
-
-
+@font-face {
+    font-family: 'HDVPeace';
+    src: url("font.ttf");
+    src: url("font.ttf") format('truetype');
+}
 
 .btn-hs{
 	background-color:transparent !important;
@@ -25,6 +29,9 @@ body{
 		color:grey !important;
 	}
 
+.contour_noir{
+	text-shadow:1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,-1px -1px 0px black,1px 0px 0px black,0px 1px 0px black,0px -1px 0px black,-1px 0px 0px black;
+}
 
 
 
@@ -106,7 +113,46 @@ body{
 		height:452px;
 		background-image:url("./card/background.png");
 		float:left;
-		padding-top:45px;
 		background-position:center top;
 	}
-		#filterrific_results .card{
+		#filterrific_results .card .number{
+			color:white;
+			font-size:50px;
+			text-align:center;
+			width:140px;
+		}
+		#filterrific_results .card .class{
+			posirion:absolute;
+		}
+		#filterrific_results .card .cout{
+			margin-top:35px;
+		}
+		#filterrific_results .card .nom{
+			margin-top:118px;
+			width:100%;
+			text-align:center;
+		    -ms-transform: rotate(-7deg); /* IE 9 */
+		    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+		    transform: rotate(-7deg);
+		    color:white;
+		    font-size:150%;
+		}
+		#filterrific_results .card .extension{
+		}
+		#filterrific_results .card .rarete{
+			text-align:center;
+		}
+		#filterrific_results .card .description{
+			height:70px;
+			color:black;
+			text-align:center;
+			width:55%;
+			margin:auto;
+		}
+		#filterrific_results .card .points_attaque{
+			float:left;
+		}
+		#filterrific_results .card .points_vie{
+			float:right;
+			width:100px;
+		}

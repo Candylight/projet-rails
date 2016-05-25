@@ -3,16 +3,20 @@
 
     <% @hscards.each do |hscard| %>
       <div class="card">
-
-              <td><%= hscard.name %></td>
-              <td><%= hscard.extension.name %></td>
-              <td><%= hscard.cost %></td>
-              <td><%= hscard.attack_points %></td>
-              <td><%= hscard.life_points %></td>
-              <td><%= hscard.description %></td>
-              <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
-              <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
-              <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
+              <div class="number contour_noir cout"><%= hscard.cost %></div>
+              <img src="" alt="">
+              <div class="nom contour_noir"><%= hscard.name %></div>
+              <div class="rarete">
+                <img src="<%= asset_path( 'images/cart/rarete/1.png' ) %>" alt="">
+              </div>
+              <div class="description"><%= hscard.description %></div>
+              <div class="number points_attaque contour_noir"><%= hscard.attack_points %></div>
+              <div class="number points_vie contour_noir"><%= hscard.life_points %></div>
+              <div class="extension"><%= hscard.extension.name %></div>
+              <div class="classe"><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color)%></div>
+              <%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %>
+              
+              <div><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
                 <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
                 <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
       </div>
