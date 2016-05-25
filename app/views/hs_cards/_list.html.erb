@@ -17,9 +17,12 @@
               <%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %>
               
               <div><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
-                <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-                <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %>
-      </div>
+
+                <% if (user_signed_in?) && current_user.admin? %>
+                  <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
+                  <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %>
+                <% end %>
+              </div>
     <% end %>
 
   <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
