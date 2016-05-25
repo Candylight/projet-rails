@@ -17,8 +17,11 @@
         <td><%= rarity.name %></td>
         <td><%= rarity.color %></td>
         <td><%= link_to 'Montrer', rarity, class:'btn btn-info' %></td>
-        <td><%= link_to 'Modifier', edit_rarity_path(rarity), class:'btn btn-warning' %></td>
+
+        <% if (user_signed_in?) && current_user.admin? %>
+      <td><%= link_to 'Modifier', edit_rarity_path(rarity), class:'btn btn-warning' %></td>
         <td><%= link_to 'Effacer', rarity,class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes vous sur de supprimer cette rareté?' } %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +29,6 @@
 
 <br>
 
-<%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
+<% if (user_signed_in?) && current_user.admin? %>
+<%= link_to 'Ajouter', new_rarity_path, class:'btn btn-info' %>
+<% end %>

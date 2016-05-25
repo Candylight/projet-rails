@@ -1,5 +1,7 @@
 class HsClassesController < ApplicationController
   before_action :set_hs_class, only: [:show, :edit, :update, :destroy]
+  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
+
 
   # GET /hs_classes
   # GET /hs_classes.json
@@ -71,4 +73,14 @@ class HsClassesController < ApplicationController
     def hs_class_params
       params.require(:hs_class).permit(:name, :color, :hero_power)
     end
+  def permission_method
+    authenticate_user!
+
+    if current_user.admin
+      return
+    else
+      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
+      redirect_to hs_classes_url
+    end
+  end
 end

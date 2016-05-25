@@ -1,41 +1,84 @@
 
 <h1> Liste des cartes</h1>
 
-<% if @hscards.any? %>
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Extension</th>
-        <th>Coût</th>
-        <th>Points d'attaque</th>
-        <th>Points de vie
-        <th>Description</th>
-        <th>Classe</th>
-        <th>Rareté</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @hscards.each do |hscard| %>
-          <tr>
-            <td><%= hscard.name %></td>
-            <td><%= hscard.extension.name %></td>
-            <td><%= hscard.cost %></td>
-            <td><%= hscard.attack_points %></td>
-            <td><%= hscard.life_points %></td>
-            <td><%= hscard.description %></td>
-            <td><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color) %></td>
-            <td><%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %></td>
-            <td><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
-            <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
-            <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
-<% else %>
-    <p>Il n'y a pas de cartes!</p>
+    <%= form_for_filterrific @filterrific do |f| %>
+    <div class="form-inline">
+
+      <div class ="form-group">
+            Rechercher
+            <%= f.text_field(
+                    :search_query,
+                    class: 'filterrific-periodically-observed'
+                ) %>
+      </div>
+
+      <div class ="form-group">
+            Classe
+            <%= f.select(
+                    :with_hs_class_name,
+                    @filterrific.select_options[:with_hs_class_name],
+                    { include_blank: '- Any -' }
+                ) %>
+      </div>
+
+      <div class ="form-group">
+        Extension
+        <%= f.select(
+                :with_extension_name,
+                @filterrific.select_options[:with_extension_name],
+                { include_blank: '- Any -' }
+            ) %>
+      </div>
+
+      <div class ="form-group">
+        Rareté
+        <%= f.select(
+                :with_rarity_name,
+                @filterrific.select_options[:with_rarity_name],
+                { include_blank: '- Any -' }
+            ) %>
+      </div>
+
+      <div class ="form-group">
+        Type
+        <%= f.select(
+                :with_type_name,
+                @filterrific.select_options[:with_type_name],
+                { include_blank: '- Any -' }
+            ) %>
+      </div>
+
+      <div class ="form-group">
+        Groupe
+        <%= f.select(
+                :with_group_name,
+                @filterrific.select_options[:with_group_name],
+                { include_blank: '- Any -' }
+            ) %>
+      </div>
+
+      <div class ="form-group">
+            Trier par
+            <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+      </div>
+
+      <div class ="form-group">
+            <%= link_to(
+                    'Réinitialiser les filtres',
+                    reset_filterrific_url,
+                ) %>
+      </div>
+          <%= render_filterrific_spinner %>
+    </div>
+
+    <% end %>
+
+<%= render(
+        partial: 'hs_cards/list',
+        locals: { hs_cards: @hscards }
+    ) %>
+
+<% if (user_signed_in?) && current_user.admin? %>
+  <%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
 <% end %>
-<%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
 

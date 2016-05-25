@@ -1,5 +1,7 @@
 class ExtensionsController < ApplicationController
   before_action :set_extension, only: [:show, :edit, :update, :destroy]
+  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
+
 
   # GET /extensions
   # GET /extensions.json
@@ -71,4 +73,15 @@ class ExtensionsController < ApplicationController
     def extension_params
       params.require(:extension).permit(:name, :release, :standard)
     end
+
+  def permission_method
+    authenticate_user!
+
+    if current_user.admin
+      return
+    else
+      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
+      redirect_to extensions_url
+    end
+  end
 end

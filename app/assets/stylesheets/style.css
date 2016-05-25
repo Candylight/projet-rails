@@ -1,0 +1,158 @@
+body{
+	background-image:url("./home/background.jpg");
+	background-size:100%;
+    font-family: "HDVPeace";
+}
+
+@font-face {
+    font-family: 'HDVPeace';
+    src: url("font.ttf");
+    src: url("font.ttf") format('truetype');
+}
+
+.btn-hs{
+	background-color:transparent !important;
+	border:none !important;
+	text-align:center;
+	background-image:url("./home/bouton.png");
+	background-position:center;
+	padding:40px 60px;
+	font-size:13px;
+	color:black;
+}
+	.btn-hs:active{
+		background-image:url("./home/bouton.png");
+		box-shadow:none;
+		color:grey !important;
+	}
+	.btn-hs:hover{
+		color:grey !important;
+	}
+
+.contour_noir{
+	text-shadow:1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,-1px -1px 0px black,1px 0px 0px black,0px 1px 0px black,0px -1px 0px black,-1px 0px 0px black;
+}
+
+
+
+
+
+/*****************************************************************************/
+/*									NAVBAR 									 */
+/*****************************************************************************/
+
+
+.navbar-inverse{
+	border:none;
+	border-radius:0px !important;
+}
+	.navbar-inverse .navbar-home{
+		background-image:url("./home/logo.png");
+		width:180px;
+		display:block;
+		height:70px;
+		background-size:100% auto;
+	}
+	.navbar-inverse .all-thumbnails{
+		margin-top:10px;
+	}
+	.navbar-inverse .interactions{
+		width:40px;
+		display:block;
+		height:33px;
+		background-size:80% auto;
+		margin-top:15px;
+		background-repeat:no-repeat;
+		background-position:center;
+		padding:20px;
+	}
+		.navbar-inverse .interactions:hover{
+			background-color:rgba(255,255,255,0.1) !important;
+		}
+		.navbar-inverse .connexion{
+			background-image:url("./navbar/account.png");
+		}
+		.navbar-inverse .inscription{
+			background-image:url("./navbar/new_account.png");
+			margin-left:20px;
+		}
+
+
+/*****************************************************************************/
+/*									HOME 									 */
+/*****************************************************************************/
+
+#page-home{
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#filterrific_results{
+	
+}
+
+	#filterrific_results .card{
+		width:336px;
+		height:452px;
+		background-image:url("./card/background.png");
+		float:left;
+		background-position:center top;
+	}
+		#filterrific_results .card .number{
+			color:white;
+			font-size:50px;
+			text-align:center;
+			width:140px;
+		}
+		#filterrific_results .card .class{
+			posirion:absolute;
+		}
+		#filterrific_results .card .cout{
+			margin-top:35px;
+		}
+		#filterrific_results .card .nom{
+			margin-top:118px;
+			width:100%;
+			text-align:center;
+		    -ms-transform: rotate(-7deg); /* IE 9 */
+		    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+		    transform: rotate(-7deg);
+		    color:white;
+		    font-size:150%;
+		}
+		#filterrific_results .card .extension{
+		}
+		#filterrific_results .card .rarete{
+			text-align:center;
+		}
+		#filterrific_results .card .description{
+			height:70px;
+			color:black;
+			text-align:center;
+			width:55%;
+			margin:auto;
+		}
+		#filterrific_results .card .points_attaque{
+			float:left;
+		}
+		#filterrific_results .card .points_vie{
+			float:right;
+			width:100px;
+		}

@@ -20,14 +20,18 @@
         <td><%= extension.name %></td>
         <td><%= extension.release %></td>
         <td><%= extension.standard %></td>
-        <td><%= link_to 'Voir', extension, class:'btn btn-info' %></td>
-        <td><%= link_to 'Modifier', edit_extension_path(extension), class:'btn btn-warning' %></td>
-        <td><%= link_to 'Effacer', extension, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer cette extension?' } %></td>
+        <td><%= link_to 'Montrer', extension, class:'btn btn-info' %></td>
+
+        <% if (user_signed_in?) && current_user.admin? %>
+      <td><%= link_to 'Modifier', edit_extension_path(extension), class:'btn btn-warning' %></td>
+      <td><%= link_to 'Effacer', extension, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer cette extension?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Ajouter', new_hs_card_path, class:'btn btn-info' %>
+<% if (user_signed_in?) && current_user.admin? %>
+  <%= link_to 'Ajouter', new_extension_path, class:'btn btn-info' %>
+<% end %>
