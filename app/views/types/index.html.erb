@@ -15,8 +15,11 @@
       <tr>
         <td><%= type.name %></td>
         <td><%= link_to 'Montrer', type,  class:'btn btn-info' %></td>
-        <td><%= link_to 'Modifier', edit_type_path(type), class:'btn btn-warning' %></td>
+
+        <% if (user_signed_in?) && current_user.admin? %>
+      <td><%= link_to 'Modifier', edit_type_path(type), class:'btn btn-warning' %></td>
         <td><%= link_to 'Effacer', type, method: :delete, data: { confirm: 'Êtes-vous sur de vouloir supprimer ce type?' }, class:'btn btn-danger' %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +27,6 @@
 
 <br>
 
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Ajouter', new_type_path, class:'btn btn-info' %>
+<% end %>

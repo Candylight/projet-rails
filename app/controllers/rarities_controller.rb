@@ -1,5 +1,7 @@
 class RaritiesController < ApplicationController
   before_action :set_rarity, only: [:show, :edit, :update, :destroy]
+  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
+
 
   # GET /rarities
   # GET /rarities.json
@@ -71,4 +73,15 @@ class RaritiesController < ApplicationController
     def rarity_params
       params.require(:rarity).permit(:name, :color)
     end
+
+  def permission_method
+    authenticate_user!
+
+    if current_user.admin
+      return
+    else
+      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
+      redirect_to rarities_url
+    end
+  end
 end

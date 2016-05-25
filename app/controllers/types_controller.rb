@@ -1,5 +1,7 @@
 class TypesController < ApplicationController
   before_action :set_type, only: [:show, :edit, :update, :destroy]
+  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
+
 
   # GET /types
   # GET /types.json
@@ -71,4 +73,15 @@ class TypesController < ApplicationController
     def type_params
       params.require(:type).permit(:name)
     end
+
+  def permission_method
+    authenticate_user!
+
+    if current_user.admin
+      return
+    else
+      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
+      redirect_to types_url
+    end
+  end
 end

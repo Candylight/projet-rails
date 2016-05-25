@@ -1,7 +1,7 @@
 class HsCardsController < ApplicationController
 
   before_action :set_hscard, only: [:show,:edit,:update, :destroy]
-  before_filter :authenticate_admin!, only: [:new, :edit, :update, :destroy]
+  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
 
   def index
     @filterrific = initialize_filterrific(
@@ -76,5 +76,16 @@ class HsCardsController < ApplicationController
 
   def set_hscard
     @hscard = HsCard.find params[:id]
+  end
+
+  def permission_method
+    authenticate_user!
+
+    if current_user.admin
+      return
+    else
+      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
+      redirect_to hs_cards_url
+    end
   end
 end

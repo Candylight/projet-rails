@@ -19,8 +19,11 @@
         <td><%= hs_class.color %></td>
         <td><%= hs_class.hero_power %></td>
         <td><%= link_to 'Montrer', hs_class, class:'btn btn-info' %></td>
-        <td><%= link_to 'Modifier', edit_hs_class_path(hs_class), class:'btn btn-warning' %></td>
+
+        <% if (user_signed_in?) && current_user.admin? %>
+      <td><%= link_to 'Modifier', edit_hs_class_path(hs_class), class:'btn btn-warning' %></td>
         <td><%= link_to 'Effacer', hs_class, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer cette classe?' } %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,6 @@
 
 <br>
 
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Ajouter', new_hs_class_path, class:'btn btn-info' %>
+<% end %>
