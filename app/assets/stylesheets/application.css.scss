@@ -1,6 +1,9 @@
+/*
+*= require commontator/application
+*/
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-
 .alert-alert {
   @extend .alert-warning;
 }

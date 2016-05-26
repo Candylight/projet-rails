@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   has_many :decks
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  acts_as_commontator
 end
