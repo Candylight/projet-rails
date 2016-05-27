@@ -19,6 +19,8 @@ gem 'will_paginate-bootstrap'
 gem 'filterrific'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'commontator', '~> 4.11.1'
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 
 group :development, :test do
