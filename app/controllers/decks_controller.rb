@@ -11,6 +11,7 @@ class DecksController < ApplicationController
   # GET /decks/1
   # GET /decks/1.json
   def show
+    commontator_thread_show(@deck)
   end
 
   # GET /decks/new
