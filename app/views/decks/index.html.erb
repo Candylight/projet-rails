@@ -2,7 +2,7 @@
 
 <h1>Listes des decks</h1>
 
-<table>
+<table class="table">
 
   <tbody>
     <% @decks.each do |deck| %>
@@ -11,8 +11,10 @@
         <td><%= deck.views %></td>
         <td><%= deck.mark %></td>
         <td><%= link_to 'Montrer', deck, class:'btn btn-info' %></td>
-        <td><%= link_to 'Modifier', edit_hs_class_path(deck), class:'btn btn-warning' %></td>
+        <% if (user_signed_in?) && current_user.admin? %>
+      <td><%= link_to 'Modifier', edit_hs_class_path(deck), class:'btn btn-warning' %></td>
         <td><%= link_to 'Effacer', deck, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer ce deck?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -20,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Deck', new_deck_path, class:'btn btn-info' %>
+<%= link_to 'Ajouter', new_deck_path, class:'btn btn-info' %>

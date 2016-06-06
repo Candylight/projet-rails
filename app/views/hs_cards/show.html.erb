@@ -25,6 +25,7 @@
       <%= hs_class_badge(hs_class.name, hs_class.color) %>
   <% end %>
 </p>
-
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Modifier', edit_hs_card_path, class:'btn btn-info' %>
+<% end %>
 <%= link_to 'Retour', hs_cards_url, class:'btn btn-danger' %>

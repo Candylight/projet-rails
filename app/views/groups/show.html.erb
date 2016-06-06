@@ -5,5 +5,7 @@
   <%= @group.name %>
 </p>
 
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Modifier', edit_group_path(@group), class:'btn btn-info' %> |
+<% end %>
 <%= link_to 'Retour', group_path, class:'btn btn-danger' %>

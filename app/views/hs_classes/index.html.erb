@@ -18,7 +18,6 @@
         <td><%= hs_class.name %></td>
         <td><%= hs_class.color %></td>
         <td><%= hs_class.hero_power %></td>
-        <td><img src ="<%= hs_class.picture %>"></td>
         <td><%= link_to 'Montrer', hs_class, class:'btn btn-info' %></td>
 
         <% if (user_signed_in?) && current_user.admin? %>

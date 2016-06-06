@@ -15,5 +15,7 @@
   <%= @hs_class.hero_power %>
 </p>
 
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Modifier', edit_hs_class_path(@hs_class), class:'btn btn-info' %> |
+<% end %>
 <%= link_to 'Retour', hs_classes_path, class:'btn btn-danger' %>

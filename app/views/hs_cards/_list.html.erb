@@ -6,23 +6,23 @@
               <div class="number contour_noir cout"><%= hscard.cost %></div>
               <img src="" alt="">
               <div class="nom contour_noir"><%= hscard.name %></div>
+              <div class="image">
+                <img src="<%hscard.picture %>" alt="">
+              </div>
               <div class="rarete">
-                <img src="<%= asset_path( 'cart/rarete/1.png' ) %>" alt="">
+                <img src="<%= hscard.rarity.picture %>" alt="">
               </div>
               <div class="description"><%= hscard.description %></div>
               <div class="number points_attaque contour_noir"><%= hscard.attack_points %></div>
               <div class="number points_vie contour_noir"><%= hscard.life_points %></div>
-              <div class="extension"><%= hscard.extension.name %></div>
-              <div class="classe"><%= hs_class_badge(hscard.hs_class.name,hscard.hs_class.color)%></div>
-              <%= rarity_badge(hscard.rarity.name,hscard.rarity.color) %>
-              
-              <div><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
 
+              <div class="bouton_interaction"><%= link_to 'Afficher', hscard, class: 'btn btn-info' %>
                 <% if (user_signed_in?) && current_user.admin? %>
                   <%= link_to 'Modifier', edit_hs_card_path(hscard), class:'btn btn-warning' %>
                   <%= link_to 'Supprimer', hscard, method: :delete, data: {confirm: 'Êtes-vous sûr(e) de vouloir supprimer cette carte?'}, class:'btn btn-danger' %>
                 <% end %>
               </div>
+
     <% end %>
 
   <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>

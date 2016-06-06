@@ -15,5 +15,7 @@
   <%= @extension.standard %>
 </p>
 
+<% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Modifier', edit_extension_path(@extension), class:'btn btn-info' %> |
+<% end %>
 <%= link_to 'Retour', extensions_path, class:'btn btn-danger' %>
