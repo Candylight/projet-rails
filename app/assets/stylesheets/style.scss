@@ -101,7 +101,9 @@ body{
 
 
 
-
+/*****************************************************************************/
+/*									CARDS INDEX					             */
+/*****************************************************************************/
 
 
 #filterrific_results{
@@ -171,3 +173,70 @@ body{
             display: inline-block;
             padding-top: 20px;
         }
+
+/*****************************************************************************/
+/*									CARDS SHOW								 */
+/*****************************************************************************/
+#show_card{
+
+}
+
+#show_card .card{
+  width:336px;
+  height:452px;
+  padding-top: 1px;
+  background-position:center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+#show_card .card .number{
+  color:white;
+  font-size:50px;
+  text-align:center;
+  width:140px;
+}
+#show_card .card .class{
+  position:absolute;
+}
+#show_card .card .cout{
+  margin-top:35px;
+  padding-right: 8px;
+  font-size: 45px;
+}
+#show_card .card .image{
+}
+#show_card .card .nom{
+  margin-top:125px;
+  width:100%;
+  text-align:center;
+  -ms-transform: rotate(-7deg); /* IE 9 */
+  -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+  transform: rotate(-7deg);
+  color:white;
+  font-size:150%;
+}
+#show_card .card .extension{
+}
+#show_card .card .rarete{
+  text-align:center;
+  padding-left: 15px;
+}
+#show_card .card .description{
+  height:70px;
+  color:black;
+  text-align:center;
+  width:55%;
+  margin:auto;
+}
+#show_card .card .points_attaque{
+  float:left;
+  font-size: 45px;
+}
+#show_card .card .points_vie{
+  float:right;
+  width:100px;
+  font-size: 45px;
+
+}
+

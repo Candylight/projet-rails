@@ -39,6 +39,7 @@ class HsCardsController < ApplicationController
 
   def show
     @hscard = HsCard.find params[:id]
+    commontator_thread_show(@hscard)
   end
 
   def new
