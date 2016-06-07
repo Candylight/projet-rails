@@ -2,9 +2,8 @@
   <div id="filterrific_results">
 
     <% @hscards.each do |hscard| %>
-      <div class="card">
+      <div style="background-image: url(<%= hscard.hs_class.picture %>)" class="card">
               <div class="number contour_noir cout"><%= hscard.cost %></div>
-              <img src="" alt="">
               <div class="nom contour_noir"><%= hscard.name %></div>
               <div class="image">
                 <img src="<%hscard.picture %>" alt="">
