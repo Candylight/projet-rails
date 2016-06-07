@@ -10,6 +10,10 @@ body{
     src: url("font.ttf") format('truetype');
 }
 
+li {
+  list-style-type: none
+}
+
 .btn-hs{
 	background-color:transparent !important;
 	border:none !important;

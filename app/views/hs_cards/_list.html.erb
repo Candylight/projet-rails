@@ -1,7 +1,8 @@
-<% if @hscards.any? %>
+<% if hs_cards.any? %>
   <div id="filterrific_results">
 
-    <% @hscards.each do |hscard| %>
+    <% hs_cards.each do |hscard| %>
+        <li>
       <div style="background-image: url(<%= hscard.hs_class.picture %>)" class="card">
               <div class="number contour_noir cout"><%= hscard.cost %></div>
               <div class="nom contour_noir"><%= hscard.name %></div>
@@ -24,8 +25,8 @@
 
     <% end %>
 
-  <%= will_paginate @hscards, renderer: BootstrapPagination::Rails %>
   </div>
+    </li>
 <% else %>
   <p>Il n'y a pas de cartes!</p>
 <% end %>

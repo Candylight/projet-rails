@@ -6,10 +6,6 @@
 </p>
 
 <p>
-  <strong>Cartes:</strong>
-  <%= render partial: 'hs_cards/hs_cards_list', locals: { hs_cards: @deck.hs_cards} %>
-</p>
-<p>
   <strong>Classes:</strong>
   <%= @deck.hs_class.name %>
 </p>
@@ -24,7 +20,13 @@
   <%= @deck.mark %>
 </p>
 
-<%= commontator_thread(@deck) %>
+<p>
+  <strong>Cartes:</strong>
+  <%= render partial: 'hs_cards/list', locals: { hs_cards: @deck.hs_cards} %>
+</p>
+
+<div class="comment"><%= commontator_thread(@deck) %></div>
+
 
 <% if (user_signed_in?) && current_user.admin? %>
   <%= link_to 'Modifier', edit_deck_path(@deck) %>
