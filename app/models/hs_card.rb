@@ -81,5 +81,6 @@ class HsCard < ActiveRecord::Base
         ['Points de vie ', 'hs_card_life_points_asc'],
     ]
   end
+  acts_as_commontable
 
 end
