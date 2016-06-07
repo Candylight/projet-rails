@@ -81,7 +81,7 @@ class DecksController < ApplicationController
       return
     else
       flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
-      redirect_to extensions_url
+      redirect_to decks_url
     end
   end
 end

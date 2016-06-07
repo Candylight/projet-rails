@@ -26,6 +26,22 @@ class HsCard < ActiveRecord::Base
 
   scope :search_query, lambda { |query|
 
+    return nil  if query.blank?
+
+    terms = query.downcase.split(/\s+/)
+
+    terms = terms.map { |e|
+      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
+    }
+
+    num_or_conds = 2
+    where(
+        terms.map { |term|
+          "(LOWER(hs_cards.name) LIKE ? OR LOWER(hs_cards.name) LIKE ?)"
+        }.join(' AND '),
+        *terms.map { |e| [e] * num_or_conds }.flatten
+    )
+
   }
 
   scope :sorted_by, lambda { |sort_option|
