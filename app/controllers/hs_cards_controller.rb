@@ -69,6 +69,14 @@ class HsCardsController < ApplicationController
     redirect_to hs_cards_path
   end
 
+  def remove
+    deck = Deck.find(params[:deck_id])
+    hs_card = HsCard.find(params[:hs_card_id])
+    deck.hs_cards.delete(hs_card)
+    redirect_to deck_path(deck)
+  end
+  helper_method :remove
+
   private
 
   def hscard_param

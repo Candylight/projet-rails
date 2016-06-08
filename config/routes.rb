@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :decks
+  resources :decks do
+    resources :hs_cards, only: [] do
+      delete 'remove'
+    end
+  end
   devise_for :admins
   devise_for :users
   resources :groups

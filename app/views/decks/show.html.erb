@@ -22,7 +22,7 @@
 
 <p>
   <strong>Cartes:</strong>
-  <%= render partial: 'hs_cards/list', locals: { hs_cards: @deck.hs_cards} %>
+  <%= render partial: 'list_for_deck', locals: { hs_cards: @deck.hs_cards} %>
 </p>
 
 <div class="comment"><%= commontator_thread(@deck) %></div>
