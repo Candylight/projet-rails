@@ -74,6 +74,7 @@ class HsCardsController < ApplicationController
     hs_card = HsCard.find(params[:hs_card_id])
     deck.hs_cards.delete(hs_card)
     redirect_to deck_path(deck)
+    flash[:info] = "La carte a bien été supprimée du deck"
   end
   helper_method :remove
 

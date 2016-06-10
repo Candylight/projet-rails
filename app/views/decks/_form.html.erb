@@ -1,14 +1,38 @@
 <%= simple_form_for(@deck) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.association :hs_cards %>
-    <%= f.association :hs_class %>
-  </div>
+    <div class="row">
+      <div class="form-group col-lg-5">
+        <%= f.input :name, class: 'form-control', label: 'Nom du deck' %>
+      </div>
 
+      <div class="form-group col-lg-5">
+        <%= f.input :description, class: 'form-control', label: 'Description du deck' %>
+      </div>
+
+      <div class="form-group col-lg-5">
+        <%= f.association :hs_class, class: 'form-control', label: 'Classe du deck' %>
+      </div>
+
+      <div class="form-group col-lg-5">
+        <%= f.association :hs_cards, class: 'form-control', label: 'Cartes du deck' %>
+      </div>
+
+    </div>
+
+    <script>
+    $("#deck_hs_class_id").on("change", function(){
+    $.ajax({
+    url: "/hs_classes/get_hs_cards",
+    type: "GET",
+    dataType: "script",
+    data:{
+    id: $(this).val()
+    }
+    })
+    })
+</script>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>

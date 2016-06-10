@@ -1,0 +1,4 @@
+$('#deck_hs_card_ids').empty();
+<% @hs_cards.each do |hscard| %>
+$('#deck_hs_card_ids').append($('<option value="<%= hscard.id %>"><%= hscard.name %></option>'));
+<% end %>

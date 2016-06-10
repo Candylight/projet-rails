@@ -63,6 +63,11 @@ class HsClassesController < ApplicationController
     end
   end
 
+  def get_hs_cards
+    @hs_class = HsClass.find(params[:id])
+    @hs_cards = @hs_class.hs_cards
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hs_class

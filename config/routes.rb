@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   resources :groups
   resources :types
   resources :extensions
-  resources :hs_classes
+  resources :hs_classes do
+    collection do
+      get 'get_hs_cards' => 'hs_classes#get_hs_cards'
+    end
+  end
+
   resources :rarities
   root 'home#index'
   resources :hs_cards
