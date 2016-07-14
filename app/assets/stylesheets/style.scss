@@ -244,3 +244,40 @@ li {
 
 }
 
+
+
+
+
+/*****************************************************************************/
+/*									DECKS									 */
+/*****************************************************************************/
+
+
+
+.comment{
+	background-color:rgba(0,0,0,0.8) !important;
+	color:white !important;
+	border:none;
+	border-radius:4px;
+}
+
+	.comment input[type=submit]{
+		background-color:white;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3;
+		padding-bottom:3px;
+		color:gray;
+		border-radius:4px;
+		border:none;
+	}
+	.comment .comment_form_field{
+		border-radius:4px;
+		overflow:hidden;
+		color:grey;
+		font-size:150%;
+		padding:5px !important;
+	}
+		.comment .comment_form_field textarea{
+			padding:5px !important;
+		}
