@@ -44,7 +44,7 @@ li {
 }
 	.btn.btn-info{
 		background-color:rgba(0,0,0,0.7) !important;
-	}
+	}class-show
 		.btn.btn-info:hover{
 			box-shadow: 0 0 10px black;
 			transition : 0.5s;
@@ -68,6 +68,9 @@ li {
 	margin:auto;
 	text-align:center;
 }
+	.class-show.deck{
+		width:80%;
+	}
 
 
 /*****************************************************************************/
@@ -318,7 +321,26 @@ li {
 }
 
 
-
+.comment .comment_actions a{
+	background-color:rgba(255,255,255,0.7);
+	color:black;
+	border-radius:3px;
+	padding:3px 8px;
+}
+	.comment .comment_actions a:hover{
+		text-decoration:none;
+		background-color:rgba(255,255,255,0.8);
+	}
+.comment .thread_hide_link{
+	background-color:rgba(255,255,255,0.7);
+	color:black;
+	border-radius:3px;
+	padding:3px 8px;
+}
+	.comment .thread_hide_link:hover{
+		text-decoration:none;
+		background-color:rgba(255,255,255,0.8);
+	}
 
 
 

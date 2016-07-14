@@ -7,6 +7,11 @@
 <% if (user_signed_in?) && current_user.admin? %>
 <%= link_to 'Modifier', edit_hs_card_path, class:'btn btn-info' %>
 <% end %>
-<%= link_to 'Retour', hs_cards_url, class:'btn btn-danger' %>
 
+<div class="comment">
 <%= commontator_thread(@hscard) %>
+</div>
+
+
+
+<%= link_to 'Retour', hs_cards_url, class:'btn btn-danger' %>

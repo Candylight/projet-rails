@@ -1,34 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="class-show deck">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @deck.name %>
-</p>
+  <h1>
+    <%= @deck.name %>
+  </h1>
 
-<p>
-  <strong>Classes:</strong>
-  <%= @deck.hs_class.name %>
-</p>
+  <p>
+    <strong>Classes:</strong>
+    <%= @deck.hs_class.name %>
+  </p>
 
-<p>
-  <strong>Views:</strong>
-  <%= @deck.views %>
-</p>
+  <p>
+    <strong>Views:</strong>
+    <%= @deck.views %>
+  </p>
 
-<p>
-  <strong>Mark:</strong>
-  <%= @deck.mark %>
-</p>
+  <p>
+    <strong>Mark:</strong>
+    <%= @deck.mark %>
+  </p>
 
-<p>
-  <strong>Cartes:</strong>
-  <%= render partial: 'list_for_deck', locals: { hs_cards: @deck.hs_cards} %>
-</p>
+  <p>
+    <strong>Cartes:</strong>
+    <%= render partial: 'list_for_deck', locals: { hs_cards: @deck.hs_cards} %>
+  </p>
 
-<div class="comment"><%= commontator_thread(@deck) %></div>
+  <div class="comment"><%= commontator_thread(@deck) %></div>
 
 
-<% if (user_signed_in?) && current_user.admin? %>
-  <%= link_to 'Modifier', edit_deck_path(@deck) %>
-<% end %>
-<%= link_to 'Retour', decks_path %>
+  <% if (user_signed_in?) && current_user.admin? %>
+    <%= link_to 'Modifier', edit_deck_path(@deck) %>
+  <% end %>
+  <%= link_to 'Retour', decks_path %>
+  </div>
