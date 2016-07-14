@@ -37,8 +37,32 @@ li {
 	text-shadow:1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,-1px -1px 0px black,1px 0px 0px black,0px 1px 0px black,0px -1px 0px black,-1px 0px 0px black;
 }
 
+.btn{
+	border:none;
+	color:white !important;
+	margin-bottom:10px;
+}
+	.btn.btn-info{
+		background-color:rgba(0,0,0,0.7) !important;
+	}
+		.btn.btn-info:hover{
+			box-shadow: 0 0 10px black;
+			transition : 0.5s;
+		}
+	.btn.btn-danger{
+		background-color:rgba(169,9,9,0.7) !important;
+	}
+		.btn.btn-danger:hover{
+			box-shadow: 0 0 10px black;
+			transition : 0.5s;
+		}
 
-
+.container h1{
+	text-align:center;
+	color:white;
+	font-size:50px;
+	text-shadow:1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,-1px -1px 0px black,1px 0px 0px black,0px 1px 0px black,0px -1px 0px black,-1px 0px 0px black, 0 0 30px black;
+}
 
 
 /*****************************************************************************/
@@ -176,11 +200,54 @@ li {
         #filterrific_results .card .bouton_interaction{
             display: inline-block;
             padding-top: 20px;
+            margin-top:60px;
         }
 
 /*****************************************************************************/
 /*									CARDS SHOW								 */
 /*****************************************************************************/
+.form-inline{
+	
+}
+	.form-inline .form-group:first-child{
+		width:100%;
+		margin-bottom:15px;
+	}
+		.form-inline .form-group:first-child input{
+			background-color:rgba(0,0,0,0.7);
+			width:70%;
+			padding:7px;
+			border:none;
+			font-size:30px;
+			border-radius:4px;
+			display:block;
+			margin:auto;
+		}
+	.form-inline .form-group{
+		width:16%;
+		display:inline-lock;
+		text-align:center;
+	}
+		.form-inline .form-group select{
+			width:90%;
+			padding:5px;
+			color:white;
+			background-color:rgba(0,0,0,0.7);
+			border:none;
+			border-radius:3px;
+		}
+			.form-inline .form-group select option{
+				background-color:rgba(0,0,0,0.7);
+				padding:4px;
+			}
+	.form-inline .form-group.reinit{
+		width:100% !important;
+		padding-top:30px;
+	}
+
+
+
+
 #show_card{
 
 }
@@ -243,6 +310,8 @@ li {
   font-size: 45px;
 
 }
+
+
 
 
 
