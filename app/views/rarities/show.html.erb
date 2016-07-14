@@ -1,16 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="class-show">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @rarity.name %>
-</p>
+	<h1>
+	  <%= @rarity.name %>
+	</h1>
 
-<p>
-  <strong>Color:</strong>
-  <%= @rarity.color %>
-</p>
+	<p>
+	  <strong>Color:</strong>
+	  <%= @rarity.color %>
+	</p>
 
-<% if (user_signed_in?) && current_user.admin? %>
-<%= link_to 'Modifier', edit_rarity_path(@rarity), class:'btn btn-info' %> |
-<% end %>
-<%= link_to 'Retour', rarities_path, class:'btn btn-danger' %>
+	<% if (user_signed_in?) && current_user.admin? %>
+	<%= link_to 'Modifier', edit_rarity_path(@rarity), class:'btn btn-info' %> |
+	<% end %>
+	<%= link_to 'Retour', rarities_path, class:'btn btn-danger' %>
+</div>

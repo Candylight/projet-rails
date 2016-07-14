@@ -1,21 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="class-show">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @hs_class.name %>
-</p>
+	<h1>
+	<%= @hs_class.name %>
+	</h1>
 
-<p>
-  <strong>Couleur:</strong>
-  <%= @hs_class.color %>
-</p>
+	<p>
+	  <strong>Couleur:</strong>
+	  <%= @hs_class.color %>
+	</p>
 
-<p>
-  <strong>Pouvoir Héroique:</strong>
-  <%= @hs_class.hero_power %>
-</p>
+	<p>
+	  <strong>Pouvoir Héroique:</strong>
+	  <%= @hs_class.hero_power %>
+	</p>
 
-<% if (user_signed_in?) && current_user.admin? %>
-<%= link_to 'Modifier', edit_hs_class_path(@hs_class), class:'btn btn-info' %> |
-<% end %>
-<%= link_to 'Retour', hs_classes_path, class:'btn btn-danger' %>
+	<% if (user_signed_in?) && current_user.admin? %>
+	<%= link_to 'Modifier', edit_hs_class_path(@hs_class), class:'btn btn-info' %> |
+	<% end %>
+	<%= link_to 'Retour', hs_classes_path, class:'btn btn-danger' %>
+</div>

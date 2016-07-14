@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="class-show">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @type.name %>
-</p>
 
-<% if (user_signed_in?) && current_user.admin? %>
-<%= link_to 'Modifier', edit_type_path(@type), class:'btn btn-info' %> |
-<% end %>
-<%= link_to 'Retour', type_path, class:'btn btn-danger' %>
+		<h1>
+		<%= @type.name %>
+		</h1>
+
+	<% if (user_signed_in?) && current_user.admin? %>
+	<%= link_to 'Modifier', edit_type_path(@type), class:'btn btn-info' %> |
+	<% end %>
+	<%= link_to 'Retour', type_path, class:'btn btn-danger' %>
+</div>

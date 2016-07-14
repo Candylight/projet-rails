@@ -1,11 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="class-show">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @group.name %>
-</p>
+	<h1>
+	  <%= @group.name %>
+	</h1>
 
-<% if (user_signed_in?) && current_user.admin? %>
-<%= link_to 'Modifier', edit_group_path(@group), class:'btn btn-info' %> |
-<% end %>
-<%= link_to 'Retour', group_path, class:'btn btn-danger' %>
+	<% if (user_signed_in?) && current_user.admin? %>
+	<%= link_to 'Modifier', edit_group_path(@group), class:'btn btn-info' %> |
+	<% end %>
+	<%= link_to 'Retour', group_path, class:'btn btn-danger' %>
+</div>
