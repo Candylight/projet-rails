@@ -141,19 +141,30 @@ li {
 /*									CARDS INDEX					             */
 /*****************************************************************************/
 
+.container-card{
+	width:336px;
+		float:left;
+}
+.image-card{
+	margin-bottom:-275px;
+	text-align:center;
+	position:relative;
+	z-index:3;
+}
 
 #filterrific_results{
 	
 }
 
-	#filterrific_results .card{
+	.card{
 		width:336px;
 		height:452px;
-		float:left;
 		background-position:center top;
         background-size: 100% auto;
         background-repeat: no-repeat;
         text-align: center;
+		position:relative;
+		z-index:4;
 	}
 		#filterrific_results .card .number{
 			color:white;
@@ -165,9 +176,9 @@ li {
 			position:absolute;
 		}
 		#filterrific_results .card .cout{
-			margin-top:35px;
             padding-right: 8px;
             font-size: 45px;
+            padding-top:35px;
 		}
         #filterrific_results .card .image{
         }
@@ -259,6 +270,10 @@ li {
 
 #show_card{
 
+}
+#show_card .container-card{
+	margin:auto;
+	float:none;
 }
 
 #show_card .card{
