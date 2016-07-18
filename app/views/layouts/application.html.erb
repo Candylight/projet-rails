@@ -46,7 +46,34 @@
     </div>
   </div>
 </nav>
+  <script type="text/javascript">
+    url = window.location.pathname;
+    if (url.indexOf('hs_cards') > -1) {
+        $('.navbar-nav').first().children().eq(1).addClass('active');
+    }
+    else if (url.indexOf('extensions') > -1) {
+        $('.navbar-nav').first().children().eq(2).addClass('active');
+    }
+    else if (url.indexOf('hs_classes') > -1) {
+        $('.navbar-nav').first().children().eq(3).addClass('active');
+    }
+    else if (url.indexOf('rarities') > -1) {
+        $('.navbar-nav').first().children().eq(4).addClass('active');
+    }
+    else if (url.indexOf('groups') > -1) {
+        $('.navbar-nav').first().children().eq(5).addClass('active');
+    }
+    else if (url.indexOf('types') > -1) {
+        $('.navbar-nav').first().children().eq(6).addClass('active');
+    }
+    else if (url.indexOf('decks') > -1) {
+        $('.navbar-nav').first().children().eq(7).addClass('active');
+    }
+    else {
+        $('.navbar-nav').first().children().eq(0).addClass('active');
+    }
 
+  </script>
   <div class="container">
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
