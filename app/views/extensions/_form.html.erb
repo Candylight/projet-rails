@@ -1,13 +1,14 @@
 <%= simple_form_for(@extension) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-group col-lg-5">
+  <div class="form-group col-lg-5 gal-form">
     <%= f.input :name, label: 'Nom', class: 'form-control' %>
     <%= f.input :release, label: 'Date de sortie', class: 'form-control' %>
     <%= f.input :standard, label: 'Autorisée en standard', class: 'form-control' %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions action-form">
     <%= f.submit 'Enregistrer ', class: 'btn btn-primary' %>
+    <%= link_to 'Retour', extensions_path, class:'btn btn-danger' %>
   </div>
 <% end %>
