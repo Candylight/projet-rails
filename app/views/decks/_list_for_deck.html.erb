@@ -3,7 +3,7 @@
 
       <% hs_cards.each do |hscard| %>
           <li>
-          <div class="container-card">
+          <div class="container-card" style="margin-bottom:90px;">
             <div class="image-card">
               <img src="<%= hscard.picture %>" alt="">
             </div>
@@ -23,7 +23,7 @@
                     <%= link_to 'Supprimer', deck_hs_card_remove_path(deck_id: @deck.id, hs_card_id: hscard.id), method: :delete, :data => { :confirm => "Are you sure?" }, class:'btn btn-danger' %>
                 <% end %>
               </div>
-              </div>
+            </div>
 
       <% end %>
 

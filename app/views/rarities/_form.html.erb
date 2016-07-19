@@ -1,13 +1,14 @@
 <%= simple_form_for(@rarity) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-group col-lg-5">
+  <div class="form-group col-lg-5 gal-form">
     <%= f.input :name, label: 'Nom', class: 'form-control' %>
     <%= f.input :color, label: 'Couleur', class: 'form-control' %>
-    <%= f.input :picture, as: :file %>
+    <%= f.input :picture, label: 'Image',as: :file %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions action-form">
     <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>
+    <%= link_to 'Retour', rarities_path, class:'btn btn-danger' %>
   </div>
 <% end %>

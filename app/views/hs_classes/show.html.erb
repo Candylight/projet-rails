@@ -14,7 +14,9 @@
 	  <strong>Pouvoir Héroique:</strong>
 	  <%= @hs_class.hero_power %>
 	</p>
-
+	<div>
+	<a href="<%= @hs_class.picture %>"><img src="<%= @hs_class.picture %>" id="img-form-show"></a>
+	</div>
 	<% if (user_signed_in?) && current_user.admin? %>
 	<%= link_to 'Modifier', edit_hs_class_path(@hs_class), class:'btn btn-info' %> |
 	<% end %>

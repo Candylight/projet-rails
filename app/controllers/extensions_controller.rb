@@ -30,7 +30,7 @@ class ExtensionsController < ApplicationController
 
     respond_to do |format|
       if @extension.save
-        format.html { redirect_to @extension, notice: 'Extension a bien été créée' }
+        format.html { redirect_to @extension, notice: 'L\'extension a bien été créée' }
         format.json { render :show, status: :created, location: @extension }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ExtensionsController < ApplicationController
   def update
     respond_to do |format|
       if @extension.update(extension_params)
-        format.html { redirect_to @extension, notice: 'Extension a bien été modifiée' }
+        format.html { redirect_to @extension, notice: 'L\'extension a bien été modifiée' }
         format.json { render :show, status: :ok, location: @extension }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExtensionsController < ApplicationController
   def destroy
     @extension.destroy
     respond_to do |format|
-      format.html { redirect_to extensions_url, notice: 'Extension a bien été détruite' }
+      format.html { redirect_to extensions_url, notice: 'L\'extension a bien été détruite' }
       format.json { head :no_content }
     end
   end

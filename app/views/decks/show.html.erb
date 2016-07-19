@@ -26,9 +26,3 @@
 
   <div class="comment"><%= commontator_thread(@deck) %></div>
 
-
-  <% if (user_signed_in?) && current_user.admin? %>
-    <%= link_to 'Modifier', edit_deck_path(@deck) %>
-  <% end %>
-  <%= link_to 'Retour', decks_path %>
-  </div>

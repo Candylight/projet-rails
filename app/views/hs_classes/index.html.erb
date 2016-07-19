@@ -2,35 +2,22 @@
 
 <h1>Liste des Classes</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Couleur</th>
-      <th>Pouvoir Héroique</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @hs_classes.each do |hs_class| %>
+        <div style="width:50%;float:left;">
+        <a href="<%= hs_class.picture %>"><img src="<%= hs_class.picture %>" id="img-form"></a>
+          <p>Nom: <%= hs_class.name %></p>
+          <p>Couleur: <%= hs_class.color %></p>
+          <p>Pouvoir Héroique: <%= hs_class.hero_power %></p>
 
-  <tbody>
-    <% @hs_classes.each do |hs_class| %>
-      <tr>
-        <td><%= hs_class.name %></td>
-        <td><%= hs_class.color %></td>
-        <td><%= hs_class.hero_power %></td>
-        <td><%= link_to 'Montrer', hs_class, class:'btn btn-info' %></td>
-
-        <% if (user_signed_in?) && current_user.admin? %>
-      <td><%= link_to 'Modifier', edit_hs_class_path(hs_class), class:'btn btn-warning' %></td>
-        <td><%= link_to 'Effacer', hs_class, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer cette classe?' } %></td>
-         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <% if (user_signed_in?) && current_user.admin? %>
+            <%= link_to 'Modifier', edit_hs_class_path(hs_class), class:'btn btn-warning' %>
+            <%= link_to 'Effacer', hs_class, class:'btn btn-danger', method: :delete, data: { confirm: 'Êtes-vous sur de supprimer cette classe?' } %>
+          <% end %>
+        </div>
+<% end %>
 
 <br>
 
 <% if (user_signed_in?) && current_user.admin? %>
-<%= link_to 'Ajouter', new_hs_class_path, class:'btn btn-info' %>
+<%= link_to 'Ajouter', new_hs_class_path, class:'btn btn-info add-class' %>
 <% end %>

@@ -359,6 +359,44 @@ li {
 
 
 
+/*****************************************************************************/
+/*									GENEREAL FORM						     */
+/*****************************************************************************/
+
+.gal-form {
+	width:100%;
+	float:left;
+}
+
+.action-form {
+	float:right;
+}
+
+#img-form {
+	width:300px;
+	height:200px;
+}
+
+#img-form-show {
+	width:300px;
+	height:auto;
+	margin-bottom:20px;
+}
+
+.add-class {
+	width:100%;
+	float:left;
+}
+
+li.active {
+    border-radius: 23px;
+    border-style: dashed;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
 
 /*****************************************************************************/
 /*									DECKS									 */
