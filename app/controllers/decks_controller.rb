@@ -1,6 +1,6 @@
 class DecksController < ApplicationController
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
-  before_filter :permission_method, :only => [:new, :edit, :create, :destroy]
+  before_filter :only => [:new, :edit, :create, :destroy]
 
   # GET /decks
   # GET /decks.json
@@ -75,14 +75,4 @@ class DecksController < ApplicationController
       params.require(:deck).permit(:name, :description, :views, :mark, :hs_class_id, hs_card_ids: [])
     end
 
-  def permission_method
-    authenticate_user!
-
-    if current_user.admin
-      return
-    else
-      flash[:danger] = "Vous n'avez pas le droit d'accéder à cette ressource"
-      redirect_to decks_url
-    end
-  end
 end
