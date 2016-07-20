@@ -5,7 +5,8 @@
     <%= f.input :name, label: 'Nom', class: 'form-control' %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions action-form">
     <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>
+    <%= link_to 'Retour', types_path, class:'btn btn-danger' %>
   </div>
 <% end %>

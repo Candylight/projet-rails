@@ -9,5 +9,5 @@
 	<% if (user_signed_in?) && current_user.admin? %>
 	<%= link_to 'Modifier', edit_type_path(@type), class:'btn btn-info' %> |
 	<% end %>
-	<%= link_to 'Retour', type_path, class:'btn btn-danger' %>
+	<%= link_to 'Retour', types_path, class:'btn btn-danger' %>
 </div>

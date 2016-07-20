@@ -22,7 +22,10 @@
 
   <p>
     <%= render partial: 'list_for_deck', locals: { hs_cards: @deck.hs_cards} %>
+
   </p>
 
   <div class="comment"><%= commontator_thread(@deck) %></div>
+  <%= link_to 'Retour', decks_path, class:'btn btn-danger' %>
+
 
