@@ -372,14 +372,9 @@ li {
 	float:right;
 }
 
-#img-form {
-	width:300px;
-	height:200px;
-}
+
 
 #img-form-show {
-	width:300px;
-	height:auto;
 	margin-bottom:20px;
 }
 
@@ -391,6 +386,7 @@ li {
 li.active {
     border-radius: 23px;
     border-style: dashed;
+    border-color: white;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
