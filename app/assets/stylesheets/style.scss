@@ -142,8 +142,8 @@ li {
 /*****************************************************************************/
 
 .container-card{
-	width:336px;
-		float:left;
+	width:33%;
+	float:left;
 }
 .image-card{
 	margin-bottom:-275px;
@@ -381,6 +381,7 @@ li {
 .add-class {
 	width:100%;
 	float:left;
+	positio:top;
 }
 
 li.active {
