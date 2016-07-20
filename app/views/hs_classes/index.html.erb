@@ -4,7 +4,10 @@
 
 <% @hs_classes.each do |hs_class| %>
         <div style="width:50%;float:left;">
-        <a href="<%= hs_class.picture %>"><img src="<%= hs_class.picture %>" id="img-form"></a>
+        <% if !hs_class.picture.to_s.include? "missing.png" %><a href="<%= hs_class.picture %>"><img src="<%= hs_class.picture %>" id="img-form"></a>
+        <% elsif %>
+        <a href="img/error/no_image.png"><img src="img/error/no_image.png" id="img-form"></a>
+        <% end %>
           <p>Nom: <%= hs_class.name %></p>
           <p>Couleur: <%= hs_class.color %></p>
           <p>Pouvoir Héroique: <%= hs_class.hero_power %></p>
